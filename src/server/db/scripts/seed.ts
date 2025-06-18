@@ -1,3 +1,5 @@
+// Option 1: If using .env file directly
+import "dotenv/config";
 import { db } from "../";
 import { questions } from "../schema";
 
@@ -58,9 +60,6 @@ async function seed() {
   console.log("🌱 Seeding questions...");
 
   try {
-    // Clear existing questions (optional - remove if you want to append)
-    console.log("✅ Cleared existing questions");
-
     // Insert all questions
     const insertedQuestions = await db
       .insert(questions)
